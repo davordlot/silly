@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>You</title>
+</head>
+
+<body>
+<div class="main">
+
+
+<!--<h1>You.</h1>-->
+<br>
+<p id="toCollapse"><br><br><br><br></p>
+<!--<p>Name: <input type="text" id="userName" value="Jackass"></p>-->
+
+
+
+
+
+
+Month: <input type="number" id="month" min="1" max="12" value="01"> 
+ Day: <input type="number" id="day" min="1" max="31" value="01"> 
+ Year: <input type="number" id="year" min="1900" max="2000" value="1980">
+
+<br>
+<button id="mainButton" onclick="goToNext()">Start</button>
+
+<p id="InsText">Enter your birthday.</p>
+
+
+
+
+
+</div>
+
+<script>
+function goToNext() {
+    
+
+var d = new Date(document.getElementById("year").value, document.getElementById("month").value - 1, document.getElementById("day").value);
+window.location = "r.html?" + Date.parse(d);
+
+}
+
+</script>
+
+</body>
+
+
+
+
+<!--
+breaths: basically used data from https://en.wikipedia.org/wiki/Respiratory_rate .  got a rough guide of 87850800
+ breaths in first ten years (during which an adult could expect 57294000), so calculate as if an adult and then add the difference (30556800).  as such this wont work for those younger than ten
+
+
+
+poo: just took the daily average.  it'll be much higher for asian countries.  probably babies poo more, but children less, so that'll even out maybe.  weight is also a huge factor
+
+wee: took the average of 1.4 liters, and took away 7 years (assuming that the first 14 years might average half?)
+
+
+
+sleep: assumed 8 hours a day, plus an extra 14965 based on extra during early years:
+5 years + 4
+8 years + 2
+5 years + 1
+14965
+
+
+
+pollutin data comes from https://www.theguardian.com/environment/datablog/2009/sep/02/carbon-emissions-per-person-capita
+ame can aus is 20ish, europe 10ish.  i'll go with 20.
+### http://data.worldbank.org/indicator/EN.ATM.CO2E.PC?name_desc=true
+actually, let's stick with 365.2*17 = 0.046549836
+
+
+
+
+ -->
+
+ </html>
