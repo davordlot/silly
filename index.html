@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+
+<style type="text/css">
+
+input, button {
+    width: 2em;
+    padding: 2px 2px;
+    font-size: 2em;
+    border-radius: 4px;
+    
+}
+
+#year{
+	width: 3em;
+}
+#mainButton{
+	width: 9em;
+	height: 2em;
+	border-radius: 15px;
+	margin-top: 1em;
+}
+
+
+
+input[type=button] {
+    padding: 14px 20px;
+    margin: 20px;
+}
+
+</style>
+
+
+
+
+
+
+
+<title>You</title>
+</head>
+
+<body>
+
+<div id="container">
+<div id="main">
+
+
+
+<br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+<span class="InsText">Month:&nbsp</span> <input type="number" id="month" min="1" max="12" value="1"> 
+ <span class="InsText">&nbsp&nbspDay:&nbsp&nbsp</span><input type="number" id="day" min="1" max="31" value="1"> 
+ <span class="InsText">&nbsp&nbsp&nbspYear:&nbsp</span><input type="number" id="year" min="1900" max="2007" value="1980">
+
+<br>
+<button id="mainButton" onclick="goToNext()">Start</button>
+
+<p id="sassy" class="InsText">Enter your birthday.</p>
+
+
+
+</div>
+
+<div id="p1_footer" class="footer">
+This site does not use cookies.  It does not store your date of birth.  
+<br>Why not send this to someone as a <span class="number">free</span>, <span class="number">tacky</span> and <span class="number">cynical</span> birthday gift to someone you don't like that much?
+
+
+</div>
+</div>
+
+
+
+<script>
+function goToNext() {
+    
+
+var d = new Date(document.getElementById("year").value, document.getElementById("month").value - 1, document.getElementById("day").value);
+
+
+if (d.getDate() == document.getElementById("day").value)
+{
+//window.location = "r.html?" + Date.parse(d);
+window.location = "r.html?" + document.getElementById("month").value + "-" + (document.getElementById("day").value) + "-" + document.getElementById("year").value;
+}
+else 
+{
+	document.getElementById("sassy").innerHTML = "That's not a real date, Einstein.";
+}
+
+
+
+
+
+ 
+ 
+
+
+
+
+}
+
+</script>
+
+</body>
+
+
+
+
+<!--
+breaths: basically used data from https://en.wikipedia.org/wiki/Respiratory_rate .  got a rough guide of 87850800
+ breaths in first ten years (during which an adult could expect 57294000), so calculate as if an adult and then add the difference (30556800).  as such this wont work for those younger than ten
+
+
+
+poo: just took the daily average.  it'll be much higher for asian countries.  probably babies poo more, but children less, so that'll even out maybe.  weight is also a huge factor
+
+wee: took the average of 1.4 liters, and took away 7 years (assuming that the first 14 years might average half?)
+
+
+
+sleep: assumed 8 hours a day, plus an extra 14965 based on extra during early years:
+5 years + 4
+8 years + 2
+5 years + 1
+14965
+
+
+
+pollutin data comes from https://www.theguardian.com/environment/datablog/2009/sep/02/carbon-emissions-per-person-capita
+ame can aus is 20ish, europe 10ish.  i'll go with 20.
+### http://data.worldbank.org/indicator/EN.ATM.CO2E.PC?name_desc=true
+actually, let's stick with 365.2*17 = 0.046549836
+
+
+
+population
+nice reading: https://www.populationinstitute.org/programs/gpso/gpso/
+
+
+ -->
+
+ </html>

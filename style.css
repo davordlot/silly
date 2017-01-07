@@ -1,0 +1,140 @@
+.number {
+	
+	color: red;
+	font-style: bold;
+}
+
+
+
+
+body, html {
+    margin:0;
+   	padding:0;
+  	height:100%;
+}
+
+#p1_footer {
+	
+	position: absolute;
+/*this works great for the first page, and maybe just isn't needed for the results page? */
+
+}
+
+.footer {
+	
+border-top-color: red;
+border-top-style: solid;
+   bottom:0px;
+   width:100%;
+    
+   background:#111111;
+}
+
+#res_footer {
+
+	clear: both;
+}
+
+a{
+	color: red;
+}
+
+#container {
+
+	min-height:100%;
+   	position:relative;
+
+
+	background-color: #111111;
+	margin-left: 15%;
+	margin-right: 15%;
+	width: 70%;
+}
+
+
+body{
+	margin-bottom: 0px;	
+	margin-top: 0px;
+	text-align: center;
+	background-color: #cccccc;
+	color: white;
+	font-size: 1.3em;
+	font-family: 'Ropa Sans', sans-serif;
+}
+
+.small-text{
+	font-size: .9em;
+	margin: 1em;
+	margin-bottom: 1em;
+}
+
+
+.very-small-text{
+	font-size: .65em;
+	margin: 1em;
+	margin-bottom: 1em;
+}
+
+#main{
+	padding:0px;
+	padding-bottom:60px
+}
+
+h1{
+	font-size: 2.8em;
+}
+
+
+p{
+	margin: 2em;
+	margin-bottom: 3.5em;
+}
+
+
+
+input, button {
+   
+    			display: inline-block;
+    			border: 3px solid #ccc;
+    
+    			background-color: lightgray;
+    
+    			box-sizing: border-box;
+}
+
+
+
+
+
+input[type=button] {
+    
+    		background-color: #4CAF50;
+    		color: white;
+      
+    		cursor: pointer;
+}
+
+
+
+#column1 {
+
+	float: left;
+	
+  	top:0px;
+	width: 50%;
+}
+#column2 {
+	
+	float: right;
+
+  	top:0px;
+	width: 50%;
+}
+
+
+
+.InsText {
+	font-size: 2em;
+}
+
+

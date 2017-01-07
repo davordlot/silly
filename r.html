@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style type="text/css">
+
+input, button {
+    width: 2.3em;
+    padding: 0px 0px;
+    font-size: 1.2em;
+    border-radius: .25em;
+    
+}
+
+#year{
+	width: 3.3em;
+}
+#mainButton{
+	width: 3.7em;
+	height: 1.4em;
+	border-radius: .5em;
+	margin-top: 1em;
+}
+
+input[type=button] {
+    padding: 1em 1em;
+    margin: 0;
+}
+
+</style>
+
+
+
+<title>Your life in numbers</title>
+</head>
+
+<body>
+<body onload="generatePage()">
+
+<div id="container">
+<div id="main">
+
+
+
+<br><br>
+<p id="intro">Find out statistics about yourself using this site.  If you're reading this, you're either viewing this through a search engine, the date after the URL has been messed with, or Javascript is disabled on your browser.</p><br>
+
+
+
+<div id="column1">
+<p id="1a"></p><p id="2a"><p id="1c"></p><p id="1d"></p><p id="1e">
+</div>	
+
+<div id="column2">
+<p id="1b"></p><p id="2b"></p><p id="2c"></p><p id="2d"><p id="2e"></p>
+</div>
+
+</div>
+
+
+
+<div id="res_footer" class="footer">
+<br>
+<span id="sassy" class="InsText"> Try another birthday?<br></span> 
+  Month: <input type="number" id="month" min="1" max="12" value="01"> 
+ &nbsp&nbspDay: <input type="number" id="day" min="1" max="31" value="01"> 
+ &nbsp&nbspYear: <input type="number" id="year" min="1900" max="2007" value="1980">
+
+
+&nbsp&nbsp&nbsp&nbsp&nbsp<button id="mainButton" onclick="goToNext()">Go</button>
+<br><br><br><p class="small-text">
+Send this page as a <span class="number">free</span>, <span class="number">tacky</span> and <span class="number">cynical</span> birthday gift to someone you don't like very much. 
+</p><p class="very-small-text">
+How accurate are these numbers? Click <span class="number">here</span>.  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  Questions, comments and suggestions to <span class="number">blah@blahblah.com</span>. 
+
+<br><br>
+
+All pages and code © 2017.  All rights reserved.  &nbsp&nbsp&nbsp  &nbsp&nbsp&nbsp  
+This site doesn't use cookies or store your DOB because, frankly, you're not that interesting. 
+</p><br><br>
+
+</div>
+</div>
+
+
+
+
+
+<script>
+function generatePage() {
+    
+
+
+
+
+var url_input = location.search.substring(1, location.search.length);
+   
+      
+      
+born = new Date(url_input)
+
+
+
+
+
+var now = new Date();
+
+if (!(born.getFullYear() > 1870 && born.getFullYear() < 2007))
+	{
+		document.getElementById("intro").innerHTML = "<h1>There isn't a valid date after the URL.  Go back to the homepage <a href=\"index.html\"> here</a>, or enter a birthday below.<\/h1>";
+
+	}
+
+else
+{
+
+
+var daysAlive = Math.round((now - born) / (1000*60*60*24)) - 1;
+
+
+
+var d = new Date(), e = new Date(d);
+var secsSinceMidnight = (e - d.setHours(0,0,0,0)) / 1000;
+
+
+
+var secondsAlive = Math.round((now - born) / (1000));
+
+
+var blahday = new Array(
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday'
+);
+
+
+var months = new Array(12);
+months[0] = "January";
+months[1] = "February";
+months[2] = "March";
+months[3] = "April";
+months[4] = "May";
+months[5] = "June";
+months[6] = "July";
+months[7] = "August";
+months[8] = "September";
+months[9] = "October";
+months[10] = "November";
+months[11] = "December";
+
+
+var datestring = months[(born.getMonth())] + " " + born.getDate() + ", " + born.getFullYear();
+
+document.getElementById("intro").innerHTML = "<h1>You were born on " + datestring + "</h1>";
+
+
+
+
+
+document.getElementById("1a").innerHTML = "Since that <span class=\"number\">" + blahday[born.getDay()] + "</span>, you have been alive for <span class=\"number\">" + daysAlive.toLocaleString() + " </span>almost entirely <span class=\"number\">wasted</span> days.";
+
+
+
+
+
+var wee = (Math.round(daysAlive * 1.4)) - 3577;
+var poo = Math.round(daysAlive * .128);
+
+document.getElementById("1b").innerHTML = "During your lifetime you have produced approximately <span class=\"number\">" + poo.toLocaleString() + "kg</span> of feces, <span class=\"number\">" + wee.toLocaleString() + " liters</span> of urine, and very little else.";
+
+//document.getElementById("1c").innerHTML = "Think about every friend and family member that you care about.  One day <span class=\"number\">all of them</span> will be dead and gone, and there\'s nothing you can do to stop that.";
+
+var sleepTime = ((daysAlive * 8) + 14965).toLocaleString();
+
+document.getElementById("1d").innerHTML = "You\'ve spent over <span class=\"number\">" + sleepTime + "</span> hours sleeping, but it\'s not like you do anything worthwhile when you\'re awake, anyway.";
+
+
+
+
+
+//Set the two dates
+var baseDateForPop =new Date(2017, 0, 3) 
+
+today=new Date()
+
+//Get 1 day in milliseconds
+
+
+var one_day=1000
+ 
+//Calculate difference btw the two dates, and convert to days
+
+
+var toDisplay = Math.ceil(((today.getTime()-baseDateForPop.getTime())/(one_day)*2.638888889)) + 7468000000;
+
+
+
+document.getElementById("1e").innerHTML = "There are currently <span class=\"number\">" + toDisplay.toLocaleString() + "</span> people on the planet, and <span class=\"number\">over 99.99999%</span> of them don't find your attractive or interesting, and they don't care what happens to you.";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var birthdays = Math.floor((daysAlive / 365.25));
+var candles = 0;
+for (i = 1; i <= birthdays; i++) { 
+    candles = candles + i;
+}
+
+
+
+document.getElementById("2a").innerHTML = "You\'ve had <span class=\"number\">" + birthdays + "</span> birthdays.  If someone had gone to the trouble to get you a birthday cake every year, that\'d be <span class=\"number\">" + candles + "</span> candles.  <br><br>But let\'s face it, they didn\'t, did they?  Not for you.";
+
+
+
+
+
+//var breaths = (21600 * daysAlive) + 30556800;
+var breaths = Math.round(.25 * secondsAlive) + 30556800;
+document.getElementById("2b").innerHTML = "You have breathed approximately <span class=\"number\">" + breaths.toLocaleString() + "</span> times, stealing precious oxygen from the atmosphere and spewing out poisonous gases in exchange.";
+
+
+var noParentsMoney = 0;
+var totalMoney = 0;
+
+
+
+for (i = 0; i < (birthdays - 18); i++){
+	noParentsMoney += 3652;
+	noParentsMoney *= 1.06;
+}
+noParentsMoney += (daysAlive - (birthdays*365.25)) * 10;
+noParentsMoney = Math.round(noParentsMoney);
+
+
+
+
+for (i = 0; i < birthdays; i++){
+	totalMoney += 3652;
+	totalMoney *= 1.06;
+}
+totalMoney += (daysAlive - (birthdays*365.25)) * 10;
+totalMoney = Math.round(totalMoney);
+
+
+var savings = "";
+
+if (birthdays > 17) {
+
+document.getElementById("2c").innerHTML = "If you\'d had the self-discipline to put aside <span class=\"number\">$10</span> every day since turning 18, you\'d now have around <span class=\"number\">$" + noParentsMoney.toLocaleString() + "</span>.<br><br>If your parents had loved you enough to invest $10 in your future before that, you\'d have <span class=\"number\">$" + totalMoney.toLocaleString() + "</span>.";
+
+}
+
+else {
+	document.getElementById("2c").innerHTML = "If your parents had loved you enough to put aside $10 for your future every day, you\'d have <span class=\"number\">$" + totalMoney.toLocaleString() + "</span> waiting to give you a strong start in life.";
+}
+
+
+
+
+var polution = (daysAlive * 0.046549836).toFixed(2);
+
+document.getElementById("2d").innerHTML = "You are personally responsible for <span class=\"number\">" + polution.toLocaleString() + " metric tons</span> of CO2 emissions, and for all of the harm that causes and will continue to cause."; 
+
+
+}
+}
+
+
+
+function goToNext() {
+    
+
+var d = new Date(document.getElementById("year").value, document.getElementById("month").value - 1, document.getElementById("day").value);
+
+
+if (d.getDate() == document.getElementById("day").value)
+{
+//window.location = "r.html?" + Date.parse(d);
+window.location = "r.html?" + document.getElementById("month").value + "-" + (document.getElementById("day").value) + "-" + document.getElementById("year").value;
+}
+else 
+{
+	document.getElementById("sassy").innerHTML = "That's not a real date, Einstein.<br>";
+}
+
+
+
+}
+</script>
+
+</body>
+
+
+
+
+ </html>
